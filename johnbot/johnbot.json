@@ -1,0 +1,31 @@
+{
+    "greetings": [
+        "Hello!",
+        "I am JohnBot. No relations to your very bright mentor, but I will ask you to test everything. I am keeping it interesting."
+    ],
+    "farewells": [
+        "Great job today!",
+        "Bye now!"
+    ],
+    "default": [
+        "I do not understand what you are saying but here is a joke. Why did the bicycle fall over? Because it was two-tired!",
+        "If you are stuck, write a magic function and pretend it already exists",
+        "Mmm, if I help you too much, you won't learn."
+    ],
+    "questions": [
+        "Are you ready to practice for your green belt exam?" 
+    ],
+        "yes":{
+                "1" : "Great!, what are the most standard library packages in Go?", 
+                "2": "What is the difference between len on a string and utf8.RuneCountInString?",
+                "3": "Name as many as you can of the 15 built-in functions in Go, and briefly say what they do.",
+                "4":"What is shadowing? When might it happen? How can you avoid it?",
+                "5":"What is a type parameter? Where would you use one and why?",
+                "6":"What is the difference between a type parameter and a type constraint?", 
+                "7":"What is nil?"
+
+        },
+        "no": [
+                "OK. Bye now"
+    ]
+        }
