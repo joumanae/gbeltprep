@@ -72,8 +72,7 @@ func (r *BotResponse) LoadBotQuestions(filename string) error {
 		scanner.Scan()
 		userInput := strings.ToLower(scanner.Text())
 		if bye.MatchString(userInput) {
-			fmt.Println("goodbye")
-			os.Exit(0)
+			r.LoadBoatGoodbyes("johnbot.json")
 		}
 		if len(userInput) > 10 {
 			fmt.Println("OK, next question")
@@ -91,8 +90,15 @@ func (r *BotResponse) LoadBoatGoodbyes(filename string) error {
 	defer file.Close()
 
 	// Decode the JSON file into BotResponse struct
-	if err := json.NewDecoder(file).Decode(&r); err != nil {
-		return fmt.Errorf("error unmarshalling JSON: %v", err)
+
+	err = json.NewDecoder(file).Decode(&r)
+	if err != nil {
+		return fmt.Errorf("error decoding JSON: %v", err)
+	}
+	for _, farewell := range r.Farewells {
+		fmt.Println(farewell)
+		os.Exit(0)
+
 	}
 
 	return nil
